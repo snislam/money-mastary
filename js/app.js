@@ -59,13 +59,22 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
     const totalBalanceBox = document.getElementById('total-balance');
     if (isNaN(foodExpense) || isNaN(rentExpense) || isNaN(clothsExpense) || isNaN(incomeAmount)) {
         errorTextStringInput('test-fail-input', true);
+        errorTextForCompare('test-fail-input-compare', false);
+        errorTextNegetiveValue('test-fail-input-minus', false);
+        totalExpenseBox.innerText = '00';
+        totalBalanceBox.innerText = '00';
     } else if (incomeAmount < 0 || foodExpense < 0 || clothsExpense < 0) {
         errorTextNegetiveValue('test-fail-input-minus', true);
         errorTextStringInput('test-fail-input', false);
+        errorTextForCompare('test-fail-input-compare', false);
+        totalExpenseBox.innerText = '00';
+        totalBalanceBox.innerText = '00';
     } else if (incomeAmount < totalExpense) {
         errorTextNegetiveValue('test-fail-input-minus', false);
         errorTextStringInput('test-fail-input', false);
         errorTextForCompare('test-fail-input-compare', true);
+        totalExpenseBox.innerText = '00';
+        totalBalanceBox.innerText = '00';
     } else {
         errorTextForCompare('test-fail-input-compare', false);
         errorTextNegetiveValue('test-fail-input-minus', false);
@@ -86,13 +95,22 @@ document.getElementById('savings-btn').addEventListener('click', function () {
     const remainingBalanceBox = document.getElementById('total-remaining-balance');
     if (isNaN(remainingBalance) || isNaN(savingsAmount)) {
         errorTextStringInput('test-fail-savings', true);
+        errorTextForCompare('test-fail-savings-compare', false);
+        errorTextNegetiveValue('test-fail-savings-minus', false);
+        remainingBalanceBox.innerText = '00';
+        totalSavingsBox.innerText = '00';
     } else if (rate < 0) {
         errorTextNegetiveValue('test-fail-savings-minus', true);
         errorTextStringInput('test-fail-savings', false);
+        errorTextForCompare('test-fail-savings-compare', false);
+        remainingBalanceBox.innerText = '00';
+        totalSavingsBox.innerText = '00';
     } else if (savingsAmount > totalBalance) {
         errorTextNegetiveValue('test-fail-savings-minus', false);
         errorTextStringInput('test-fail-savings', false);
         errorTextForCompare('test-fail-savings-compare', true);
+        remainingBalanceBox.innerText = '00';
+        totalSavingsBox.innerText = '00';
     } else {
         errorTextForCompare('test-fail-savings-compare', false);
         errorTextNegetiveValue('test-fail-savings-minus', false);
