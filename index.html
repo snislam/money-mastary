@@ -42,7 +42,7 @@
               </div>
 
               <!-- Expense Input Fields -->
-              <h5 class="fw-bold text-center">Expenses</h5>
+              <h5 class="fw-bold text-center pt-3">Expenses</h5>
               <!-- Food Expense -->
               <div class="row g-3 align-items-center mx-auto w-75 py-2">
                 <div class="col-auto">
@@ -73,43 +73,43 @@
 
               <!-- Calculator Button -->
               <div class="text-center py-3">
-                <button class="btn btn-primary">Calculate</button>
+                <button id="calculate-btn" class="btn btn-primary">Calculate</button>
               </div>
 
               <!-- Total expense section -->
               <div class="text-center fw-bold">
-                <p>Total Expense: $<span id="total-expense">00</span></p>
+                <p>Total Expense: <span id="total-expense">00</span></p>
               </div>
 
               <!-- Total balance section -->
               <div class="text-center fw-bold">
-                <p>Balance: $<span id="total-balance">00</span></p>
+                <p>Balance: <span id="total-balance">00</span></p>
               </div>
 
               <!-- Saving-calculatetor -->
               <div class="row g-2 align-items-center mx-auto w-75 py-2">
                 <div class="col-2">
-                  <label for="food-expense" class="col-form-label fw-bold">Save:</label>
+                  <label for="savings-calculation" class="col-form-label fw-bold">Save:</label>
                 </div>
                 <div class="col-4">
-                  <input type="text" id="food-expense" class="form-control form-small bg-light bg-gradient" placeholder="ex-20">
+                  <input type="text" id="savings-rate" class="form-control form-small bg-light bg-gradient" placeholder="ex-20">
                 </div>
                 <div class="col-2">
                   <span>%</span>
                 </div>
                 <div class="col-4">
-                  <button class="btn btn-primary">Save</button>
+                  <button id="savings-btn" class="btn btn-primary">Save</button>
                 </div>
               </div>
 
               <!-- Total savings section -->
               <div class="text-center fw-bold pt-4">
-                <p>Saving Amount: $<span id="total-expense">00</span></p>
+                <p>Saving Amount: <span id="total-savings">00</span></p>
               </div>
 
               <!-- Remaining balance section -->
               <div class="text-center fw-bold pt-2">
-                <p>Remaining Balance: $<span id="total-balance">00</span></p>
+                <p>Remaining Balance: <span id="total-remaining-balance">00</span></p>
               </div>
 
             </div>
