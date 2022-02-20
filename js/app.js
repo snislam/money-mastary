@@ -35,6 +35,17 @@ function errorTextNegetiveValue(idName, isBlock) {
     }
 };
 
+
+// error handeling minus number not allowed
+function errorTextForCompare(idName, isBlock) {
+    const errorMessageElement = document.getElementById(idName);
+    if (isBlock) {
+        errorMessageElement.style.display = 'block';
+    } else {
+        errorMessageElement.style.display = 'none';
+    }
+};
+
 // income
 
 document.getElementById('calculate-btn').addEventListener('click', function () {
@@ -51,7 +62,12 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
     } else if (incomeAmount < 0 || foodExpense < 0 || clothsExpense < 0) {
         errorTextNegetiveValue('test-fail-input-minus', true);
         errorTextStringInput('test-fail-input', false);
+    } else if (incomeAmount < totalExpense) {
+        errorTextNegetiveValue('test-fail-input-minus', false);
+        errorTextStringInput('test-fail-input', false);
+        errorTextForCompare('test-fail-input-compare', true);
     } else {
+        errorTextForCompare('test-fail-input-compare', false);
         errorTextNegetiveValue('test-fail-input-minus', false);
         errorTextStringInput('test-fail-input', false);
         totalExpenseBox.innerText = totalExpense;
@@ -73,7 +89,12 @@ document.getElementById('savings-btn').addEventListener('click', function () {
     } else if (rate < 0) {
         errorTextNegetiveValue('test-fail-savings-minus', true);
         errorTextStringInput('test-fail-savings', false);
+    } else if (savingsAmount > totalBalance) {
+        errorTextNegetiveValue('test-fail-savings-minus', false);
+        errorTextStringInput('test-fail-savings', false);
+        errorTextForCompare('test-fail-savings-compare', true);
     } else {
+        errorTextForCompare('test-fail-savings-compare', false);
         errorTextNegetiveValue('test-fail-savings-minus', false);
         errorTextStringInput('test-fail-savings', false);
         remainingBalanceBox.innerText = remainingBalance;
